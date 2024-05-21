@@ -1,0 +1,27 @@
+title: Doc Projet
+description: Documentation du projet
+
+# NE RIEN MODIFIER CI-DESSOUS SI VOUS N'ETES PAS CERTAINS DE CE QUE VOUS FAITES
+
+# Thème
+remote_theme: pmarsceill/just-the-docs
+
+# Paramètres optionnels de "Just the Docs"
+just_the_docs:
+  navigation_depth: 5
+  search_enabled: true
+  search_indexing: true
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+
+# Exclusions
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby
