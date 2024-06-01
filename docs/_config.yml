@@ -1,10 +1,14 @@
-title: Doc Projet
-description: Documentation du projet
+description: Projet_S8_capteur_courant
 
 # NE RIEN MODIFIER CI-DESSOUS SI VOUS N'ETES PAS CERTAINS DE CE QUE VOUS FAITES
 
 # Thème
 remote_theme: pmarsceill/just-the-docs
+
+url: https://mathieuhelwig.github.io/IoT_elecrical_counter
+
+aux_links: # remove if you don't want this link to appear on your pages
+  Template Repository: https://github.com/mathieuhelwig/IoT_elecrical_counter
 
 # Paramètres optionnels de "Just the Docs"
 just_the_docs:
