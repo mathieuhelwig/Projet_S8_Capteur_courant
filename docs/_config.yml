@@ -5,7 +5,7 @@ description: Projet_S8_capteur_courant
 # Thème
 remote_theme: pmarsceill/just-the-docs
 
-url: https://mathieuhelwig.github.io/IoT_elecrical_counter
+url: https://mathieuhelwig.github.io/IoT_elecrical_power_counter
 
 aux_links: # remove if you don't want this link to appear on your pages
   Template Repository: https://github.com/mathieuhelwig/IoT_elecrical_power_counter
