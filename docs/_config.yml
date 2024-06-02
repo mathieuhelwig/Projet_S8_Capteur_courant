@@ -5,10 +5,6 @@ description: Projet_S8:Connected_electricity_power_counter
 # Thème
 remote_theme: pmarsceill/just-the-docs
 
-url: https://mathieuhelwig.github.io/Connected_electricity_power_counter
-
-aux_links: # remove if you don't want this link to appear on your pages
-  Template Repository: https://github.com/mathieuhelwig/Connected_electricity_power_counter
 # Paramètres optionnels de "Just the Docs"
 just_the_docs:
   navigation_depth: 5
