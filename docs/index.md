@@ -18,23 +18,6 @@ Ce projet a été réalisé en 3 étapes:\
 &emsp;2. Montage d'une VM sur un serveur executant un conteneur, et déploiement des images nécessaires dans le conteneur.\
 &emsp;3. Développement des flux et des dashboards Node-Red.
 
-## Illustration par quelques images
-
-
-
-
-
-&emsp;3. Images du flux Node-Red et du Dashboard associé
-
-<img
-    style="display: block; 
-           margin-left: auto;
-           margin-right: auto;
-           width: 30%;"
-src="./images/dashboard_node-red.jpg"
-alt="dashboard node-red">
-<p style="text-align: center;"><em>Rendu des données dans le dashboard de Node-Red</em></p>
-
 ## Poster
 
 Ici vous publierez le poster de votre projet.
