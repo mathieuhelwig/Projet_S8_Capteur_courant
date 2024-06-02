@@ -7,7 +7,7 @@ title: Études et choix techniques
 # Études et choix techniques
 
 Nous détaillons dans cette partie les choix techniques concernant les 3 étapes de conception et de réalisation du prototype:
-## 1. Réalisation et programmation de l'objet connecté lui-même, basé sur:
+## 1. Réalisation et programmation de l'objet connecté, basé sur:
 &emsp;&emsp;- 3 capteurs de courants non invasifs [SC-013-050](https://www.amazon.fr/dp/B07MY3NNFR?psc=1&ref=ppx_yo2ov_dt_b_product_details),\
 &emsp;&emsp;- 3 modules de conversion analogique-numérique [ADS1115](https://www.amazon.fr/dp/B07QHWLTTS?ref=ppx_yo2ov_dt_b_product_details&th=1),\
 &emsp;&emsp;- 1 [carte Arduino Uno](https://www.amazon.fr/dp/B01JD2Z5XW?psc=1&ref=ppx_yo2ov_dt_b_product_details),\
