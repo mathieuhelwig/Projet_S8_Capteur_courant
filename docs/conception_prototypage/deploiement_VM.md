@@ -22,7 +22,7 @@ nav_order: 2
 
 &emsp;- Manipulations postérieures au déploiement de la stack:\
 &emsp;&emsp;- volumes à mapper pour la persistance des données:\
-&emsp;&emsp;- configuration serveur Mosquitto:\
+&emsp;&emsp;- configuration serveur Mosquitto:
 
 ## 2.3 Image du résultat de la stack complète montée dans Portainer
 
