@@ -19,7 +19,7 @@ Le processus de prototypage est divisé en 3 étapes :
 
 ## Compléments sur le matériel nécessaire
 
-En complément du matériel nécessaire, présenté dans la partie [Études et choix techniques](../etudes.md), il vous faudra vous équiper et savoir vous servir d'un poste à souder à l'étain. En effet, quelques soudures sont nécessaires, le matériel étant envoyé sans les pattes de connexion pour breadboard soudées.
+En complément du matériel nécessaire présenté dans la partie [Études et choix techniques](../etudes.md), il vous faudra vous équiper et savoir vous servir d'un poste à souder à l'étain. En effet, quelques soudures sont nécessaires, le matériel étant envoyé sans les pattes de connexion pour breadboard soudées.
 
 ---
 
