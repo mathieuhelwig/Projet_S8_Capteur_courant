@@ -9,7 +9,7 @@ nav_order: 3
 
 ## 3.1 Récupération des flux MQTT
 
-## 3.2 Enregistrement de l'objet Fiware Orion
+## 3.2 Enregistrement de l'objet Fiware Orion et création d'abonnements
 
 ## 3.3 Enregistrement historisé dans MariaDB
 

@@ -9,7 +9,7 @@ has_children: true
 
 Bienvenue dans la section dédiée aux étapes de conception et prototypage du projet "IoT Connected Electricity Power Consumption Counter". Ici, vous trouverez des guides détaillés pour chaque étape du processus de prototypage.
 
-## Aperçu des Étapes
+## Aperçu des étapes
 
 Le processus de prototypage est divisé en 3 étapes :
 

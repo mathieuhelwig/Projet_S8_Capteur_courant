@@ -9,20 +9,20 @@ nav_order: 2
 
 ## 2.1 Caractéristiques de la VM
 
-&emsp;- Système d'exploitation
-&emsp;- Nombre de coeurs CPU
-&emsp;- Mémoire vive
-&emsp;- Espace disque
+&emsp;- Système d'exploitation:\
+&emsp;- Nombre de coeurs CPU:\
+&emsp;- Mémoire vive:\
+&emsp;- Espace disque:
 
 ## 2.2 Caractéristiques du conteneur
 
-&emsp;- Les différentes images à intégrer
+&emsp;- Les différentes images à intégrer:
 
-&emsp;- Fichier .yml de déploiement de la stack
+&emsp;- Fichier .yml de déploiement de la stack:
 
-&emsp;- Manipulations postérieures au déploiement de la stack
-&emsp;&emsp;- volumes à mapper pour la persistance des données
-&emsp;&emsp;- configuration serveur Mosquitto
+&emsp;- Manipulations postérieures au déploiement de la stack:\
+&emsp;&emsp;- volumes à mapper pour la persistance des données:\
+&emsp;&emsp;- configuration serveur Mosquitto:\
 
 ## 2.3 Image du résultat de la stack complète montée dans Portainer
 

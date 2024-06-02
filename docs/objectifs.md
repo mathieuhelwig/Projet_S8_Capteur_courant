@@ -8,9 +8,9 @@ title: Objectifs du projet
 
 Notre consommation d'énergie électrique est un facteur qui se doit d'être surveillé pour de multiples raisons:\
     - le changement climatique qui ne peut plus être dénié et pour lequel la production d'énergie électrique est un facteur impactant,\
-    - le coût de l'énergie électrique, autant pour les particuliers que pour les entreprises du milieu insutriel et des autres secteurs,\
+    - le coût de l'énergie électrique, autant pour les particuliers que pour les entreprises du milieu indutriel et des autres secteurs,\
     - la "qualité" de notre consommation d'énergie, notamment au niveau du déphasage qu'elle peut produire,\
-    - la surveillance d'une éventuelle production électrique pour compenser la consommation d'une site, que cette production soit photovoltaïque ou éolienne,\
+    - la surveillance d'une éventuelle production électrique pour compenser la consommation d'un site, que cette production soit photovoltaïque ou éolienne,\
     - etc.
 
 ## 1.1 Contexte du projet
@@ -25,7 +25,7 @@ Dans notre société, la consommation d'énergie électrique ne fait qu'augmente
 
 C'est dans ce cadre et pour ces raisons que nous avons voulu concevoir un moyen simple à mettre en oeuvre pour la surveillance de la consommation électrique d'un site.\
 Le site pourra être de taille variable, allant de la maison individuelle à la grande zone industrielle, en passant par les logements collectifs et les bâtiments publics.\
-Cette solution devra pouvoir être mise à l'échelle rapidement et simplement pour pouvoir étendre la surveillance à un quartier, à une ville, une région, un pays.
+Cette solution devra pouvoir être mise à l'échelle rapidement et simplement pour pouvoir étendre la surveillance à un quartier, une ville, une région, un pays.
 
 # 2. Existant
 
