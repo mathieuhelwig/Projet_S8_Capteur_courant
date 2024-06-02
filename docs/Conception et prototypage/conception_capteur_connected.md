@@ -26,6 +26,6 @@ nav_order: 1
            margin-left: auto;
            margin-right: auto;
            width: 70%;"
-src="./images/capteur_courant_3_ads.jpg"
+src="../images/capteur_courant_3_ads.jpg"
 alt = "capteur de courants avec ses 3 ADS1115">
 <p style="text-align: center;"><em>Le capteur de courants avec ses 3 ADS1115 et le shield ethernet monté sur la carte Arduino Uno</em></p>
