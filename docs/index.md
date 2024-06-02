@@ -43,18 +43,9 @@ Ce projet a été réalisée en 3 étapes:\
            margin-left: auto;
            margin-right: auto;
            width: 70%;"
-src="../images/capteur_courant_3_ads.jpg"
+src="./images/capteur_courant_3_ads.jpg"
 alt = "capteur de courants avec ses 3 ADS1115">
 <p style="text-align: center;"><em>Le capteur de courants avec ses 3 ADS1115</em></p>
-
-<img
-    style="display: block; 
-           margin-left: auto;
-           margin-right: auto;
-           width: 70%;"
-src="../images/montage_capteur_courant_3_ads.jpg"
-alt = "montage capteur dans un tableau électrique">
-<p style="text-align: center;"><em>Le montage du capteur dans un tableau électrique</em></p>
 
 &emsp;2. Image du résultat de la stack complète montée dans Portainer
 
@@ -63,13 +54,19 @@ alt = "montage capteur dans un tableau électrique">
            margin-left: auto;
            margin-right: auto;
            width: 100%;"
-src="../images/stack_portainer.jpg"
+src="./images/stack_portainer.jpg"
 alt="stack Portainer">
 <p style="text-align: center;"><em>Le résultat de la stack avec les différentes images déployées dans Portainer</em></p>
 
 &emsp;3. Images du flux Node-Red et du Dashboard associé
 
-![dashboard node-red](images/dashboard_node-red.jpg)
+<img
+    style="display: block; 
+           margin-left: auto;
+           margin-right: auto;
+           width: 30%;"
+src="./images/dashboard_node-red.jpg"
+alt="dashboard node-red">
 <p style="text-align: center;"><em>Rendu des données dans le dashboard de Node-Red</em></p>
 
 ## Poster
