@@ -54,7 +54,7 @@ src="../images/V_rms_ptp.jpg"
 alt = "relation entre tension RMS et crete a crete">
 
 <p>
-    C'est pourquoi, dans le cas du SC-013-050 avec une tension de sortie de +/- 1V RMS, la tension de crête sera de +/- 1.414V et la tension crête-à-crête sera de 2.828V. 
+    C'est pourquoi, dans le cas du SC-013-050 avec une tension de sortie de 1V RMS, la tension de crête sera de +/- 1.414V et la tension crête-à-crête sera de 2.828V. 
 </p>
 
 ### 1.1.2 Présentation du convertisseur analogique-numérique ADS-1115
