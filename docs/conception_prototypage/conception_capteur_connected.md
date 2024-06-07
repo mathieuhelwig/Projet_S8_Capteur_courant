@@ -42,7 +42,7 @@ alt = "SC-013_schema_montage_autour_fil_conducteur"></div>
 
 <p>
     Il existe différentes références du SC-013, avec ou sans résistance de charge. Pour simplifier le montage, nous avons selectionné la référence SC-013-050, équipé d'une résistance de charge intégrée et permettant de mesurer des courants primaires jusqu'à 50A (soit une puissance jusqu'à 11500W).<br>
-    On aura donc en sortie du SC-013-050 une tension de 1V RMS (signal analogique), correspondant aux +/- 50A dans le fil conducteur.<br>
+    On aura donc en sortie du SC-013-050 une tension de 1V RMS (signal analogique), correspondant aux 50A dans le fil conducteur.<br>
     La tension RMS (signifiant <em>Root Mean Square</em>) représente une mesure de la tension crête-à-crête (ou <em>peak-to-peak</em> en anglais). La relation entre la valeur RMS et la valeur crête-à-crête d'une tension est la suivante: 
 </p>
 
