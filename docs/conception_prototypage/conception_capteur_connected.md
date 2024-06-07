@@ -16,8 +16,6 @@ nav_order: 1
     En effet, il se présente sous la forme d'un aimant coupé en 2 sur lequel est enroulé un fil électrique.
     L'aimant coupé en 2 permet d'ouvrir le SC-013 et de le refermer autour du conducteur dans lequel passe le courant à mesurer. Dans le fil secondaire autour de l'aimant circule alors un courant proportionnel au courant à mesurer circulant dans le fil conducteur primaire.<br>
     En ce sens, son fonctionnement est proche de celui d'un transformateur et repose sur le principe des courants induits.<br>
-    Il existe différentes références du SC-013, avec ou sans résistance de charge. Pour simplifier le montage, nous avons selectionné la référence SC-013-050, équipé d'une résistance de charge intégrée et permettant de mesurer des courants primaires jusqu'à 50A (soit une puissance jusqu'à 11500W).<br>
-    On aura donc en sortie du SC-013-050 une tension de +/- 1V RMS, correspondant aux +/- 50A dans le fil conducteur.
 </p>
 
 <div style="display: inline-block; width: 1030px; max-width: 100%; border: 1px solid black;">
@@ -44,8 +42,8 @@ alt = "SC-013_schema_montage_autour_fil_conducteur"></div>
 
 <p>
     Il existe différentes références du SC-013, avec ou sans résistance de charge. Pour simplifier le montage, nous avons selectionné la référence SC-013-050, équipé d'une résistance de charge intégrée et permettant de mesurer des courants primaires jusqu'à 50A (soit une puissance jusqu'à 11500W).<br>
-    On aura donc en sortie du SC-013-050 une tension de +/- 1V RMS (signal analogique), correspondant aux +/- 50A dans le fil conducteur.<br>
-    La tension RMS (signifiant <em>Root Mean Square</em>) représente une mesure de la tension crête-à-crête (ou <em>peak-to-peak</em> en anglais). La relation entre la valeur RMS et la valeur crête à crête d'une tension est la suivante: 
+    On aura donc en sortie du SC-013-050 une tension de 1V RMS (signal analogique), correspondant aux +/- 50A dans le fil conducteur.<br>
+    La tension RMS (signifiant <em>Root Mean Square</em>) représente une mesure de la tension crête-à-crête (ou <em>peak-to-peak</em> en anglais). La relation entre la valeur RMS et la valeur crête-à-crête d'une tension est la suivante: 
 </p>
 
 <img
