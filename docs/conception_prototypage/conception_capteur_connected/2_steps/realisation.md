@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Réalisation et programmation de l'objet connecté
-parent: Conception et prototypage
+title: Réalisation de l'objet connecté
+parent: Réalisation et programmation de l'objet connecté
+grand-parent: Conception et prototypage
 nav_order: 1
 ---
-
-# 1. Réalisation et programmation de l'objet connecté
 
 ## 1.1 Réalisation
 
@@ -58,7 +57,7 @@ src="../images/V_rms_ptp.jpg"
 alt = "relation entre tension RMS et crete a crete">
 
 <p>
-    C'est pourquoi, dans le cas du SC-013-050 avec une tension de sortie de 1V RMS, la tension de crête sera de +/- 1.414V et la tension crête-à-crête sera de 2.828V. Nous verrons un peu plus tard que ces valeurs sont importantes dans l'écriture du programme pour l'Arduino Uno.
+    C'est pourquoi, dans le cas du SC-013-050 avec une tension de sortie de 1V RMS, la tension de crête sera de +/- 1.414V et la tension crête-à-crête sera de 2.828V. Nous verrons un peu plus loin que ces valeurs sont importantes dans l'écriture du programme pour l'Arduino Uno.
 </p>
 
 ### 1.1.2 Présentation du convertisseur analogique-numérique ADS1115
@@ -113,25 +112,3 @@ alt = "schema_raccordement_4_ADS1115_sur_microcontroleur_bus_I2C">
 
 
 ### 1.1.4 Schéma du montage
-
-
-
-## 1.2 Récupération du timestamp
-
-
-## 1.3 Transmission des données via MQTT
-
-
-## 1.4 Présentation du programme définitif tournant sur l'Arduino Uno équipé du shield W5100
-
-
-## 1.5 Quelques images de l'objet connecté
-
-<img
-    style="display: block; 
-           margin-left: auto;
-           margin-right: auto;
-           width: 70%;"
-src="../images/capteur_courant_3_ads.jpg"
-alt = "capteur de courants avec ses 3 ADS1115">
-<p style="text-align: center;"><em>Le capteur de courants avec ses 3 ADS1115 et le shield ethernet monté sur la carte Arduino Uno</em></p>
