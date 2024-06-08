@@ -37,4 +37,4 @@ N'hésitez pas à nous en proposer d'autres !
 
 
 
-### 6.
+### 6. Connexion à l'API d'Enedis pour récupérer et comparer les données
