@@ -7,7 +7,7 @@ remote_theme: pmarsceill/just-the-docs
 
 # Paramètres optionnels de "Just the Docs"
 just_the_docs:
-  navigation_depth: 5
+  navigation_depth: -1
   search_enabled: true
   search_indexing: true
 

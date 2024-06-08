@@ -96,9 +96,10 @@ alt = "ADS1115_mounting_scheme_on_Arduino"></div>
 
 <img
     style="display: block;
-            width: 90%;
+            width: 100%;
             margin-left: auto;
-            margin-right: auto;"
+            margin-right: auto;
+            border: 1px solid black;"
 src="./img/schema_4_ADS1115_bus_I2C.jpg"
 alt = "schema_raccordement_4_ADS1115_sur_microcontroleur_bus_I2C">
 
