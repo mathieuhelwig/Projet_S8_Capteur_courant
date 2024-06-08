@@ -49,8 +49,6 @@ byte packetBuffer[NTP_PACKET_SIZE];  //buffer to hold incoming and outgoing pack
 // A UDP instance to let us send and receive packets over UDP
 EthernetUDP Udp;
 // L'adresse IP que prendra le shield
-//IPAddress ip(192, 168, 1, 150);//adresse IP qui fonctionne chez MH
-//IPAddress ip(192, 168, 1, 110);//adresse IP qui fonctionne à Salouel
 //IPAddress ip(10, 100, 0, 150);//adresse IP qui fonctionne à ESIEE réseau RIOC
 IPAddress ip(192, 168, 2, 4);//adresse IP qui fonctionne à ESIEE sortie réseau RIOC
 // L'objet qui nous servira à la communication
