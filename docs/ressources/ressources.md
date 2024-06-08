@@ -12,8 +12,9 @@ Bienvenue dans la section dédiée aux ressources de notre projet. Ici, vous tro
 
 1. [Page du site luisllamas.es dédiée au SC-013](https://www.luisllamas.es/en/arduino-current-sensor-sct-013/)
 2. [Page du site Developpez.com dédiée au bus I2C avec Arduino](https://f-leb.developpez.com/tutoriels/arduino/bus-i2c/)
-3. 
-4. 
+3. [Page guidant dans le déploiement d'une image d'un broker MQTT dans Portainer](https://itbacon.com/2023/08/01/installing-mosquitto-mqtt-in-portainer/)
+4. [Page guidant pour l'utilisation de l'API d'Enedis](https://conso.boris.sh/)
+5. 
 
 ## Documentations techniques
 
