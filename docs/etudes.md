@@ -1,10 +1,10 @@
 ---
-layout: default
-nav_order: 4
+layout: home
+nav_order: 3
 title: Études et choix techniques
 ---
 
-# Études et choix techniques
+## Études et choix techniques
 
 Nous détaillons dans cette partie les choix techniques concernant les 3 étapes de conception et de réalisation du prototype:
 ## 1. Réalisation et programmation de l'objet connecté, basé sur:
