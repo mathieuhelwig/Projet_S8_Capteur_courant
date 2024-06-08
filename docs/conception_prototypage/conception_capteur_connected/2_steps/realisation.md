@@ -26,19 +26,19 @@ nav_order: 1
     style="display: inline-block; 
             width: 33%;
             float: left;"
-src="\..\..\images\SC-013_non_invasive_current_detector.jpg"
+src="./img/SC-013_non_invasive_current_detector.jpg"
 alt = "SC-013_non_invasive_current_detector">
 <img
     style="display: inline-block; 
             width: 33%;
             float: center;"
-src="\..\..\images\SC-013_principe_de_fonctionnement.jpg"
+src="./img/SC-013_principe_de_fonctionnement.jpg"
 alt = "SC-013_principe_de_fonctionnement">
 <img
     style="display: inline-block; 
             width: 33%;
             float: right;"
-src="\..\..\images\SC-013_schema_montage_autour_fil_conducteur.jpg"
+src="./img/SC-013_montage.jpg"
 alt = "SC-013_schema_montage_autour_fil_conducteur"></div>
 
 <p style="text-align: center;"><em>Présentation du SC-013: capteur non invasif - principe de fonctionnement - montage sur le fil conducteur</em></p>
@@ -53,7 +53,7 @@ alt = "SC-013_schema_montage_autour_fil_conducteur"></div>
     style="display: block; 
            margin-left: auto;
            margin-right: auto;"
-src="\..\..\images\V_rms_ptp.jpg"
+src="./img/V_rms_ptp.jpg"
 alt = "relation entre tension RMS et crete a crete">
 
 <p>
@@ -73,19 +73,19 @@ alt = "relation entre tension RMS et crete a crete">
     style="display: inline-block; 
             width: 35%;
             float: left;"
-src="\..\..\images\jack_corresponding_on_SC-013.jpg"
+src="./img/jack_corresponding_on_SC-013.jpg"
 alt = "jack_corresponding_on_SC-013">
 <img
     style="display: inline-block; 
             width: 45%;
             float: center;"
-src="\..\..\images\SC-013_mounting_scheme_on_ADS1115.jpg"
+src="./img/SC-013_mounting_scheme_on_ADS1115.jpg"
 alt = "SC-013_mounting_scheme_on_ADS1115">
 <img
     style="display: inline-block; 
             width: 20%;
             float: right;"
-src="\..\..\images\ADS1115_mounting_scheme_on_Arduino.jpg"
+src="./img/ADS1115_mounting_scheme_on_Arduino.jpg"
 alt = "ADS1115_mounting_scheme_on_Arduino"></div>
 
 <p style="text-align: center;"><em>Schémas de raccordement entre un SC-013 et un ADS1115 jusqu'aux broches de l'Arduino Uno</em></p>
@@ -96,10 +96,11 @@ alt = "ADS1115_mounting_scheme_on_Arduino"></div>
 
 <img
     style="display: block;
-            width: 90%;
+            width: 100%;
             margin-left: auto;
-            margin-right: auto;"
-src="\..\..\images\schema_raccordement_4_ADS1115_sur_microcontroleur_bus_I2C.jpg"
+            margin-right: auto;
+            border: 1px solid black;"
+src="./img/schema_4_ADS1115_bus_I2C.jpg"
 alt = "schema_raccordement_4_ADS1115_sur_microcontroleur_bus_I2C">
 
 <p style="text-align: center;"><em>Schéma de raccordement de 4 ADS1115 sur un microcontroleur prenant en charge le bus I2C</em></p>
