@@ -10,10 +10,3 @@ has_children: true
 
 Bienvenue dans la section dédiée aux étapes de réalisation et de programmation de notre objet connecté. Ici, vous trouverez des guides détaillés pour les étapes de montage/câblage et de programmation.
 
-### Aperçu des étapes
-
-La conception de l'objet connecté est composée de :
-
-1. [La réalisation (montage / câblage)](realisation.md)
-2. [La programmation arduino](programmation.md)
-
