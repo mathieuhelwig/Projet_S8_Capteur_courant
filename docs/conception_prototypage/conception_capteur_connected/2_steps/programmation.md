@@ -1,38 +1,36 @@
----
-layout: default
-title: Programmation arduino
-parent: Réalisation et programmation de l'objet connecté
-grand_parent: Conception et prototypage
-nav_order: 2
----
+// The ADC input range (or gain) can be changed via the following
+// functions, but be careful never to exceed VDD +0.3V max, or to
+// exceed the upper and lower limits if you adjust the input range!
+// Setting these values incorrectly may destroy your ADC!
+//                                                                ADS1015  ADS1115
+//                                                                -------  -------
+// ads.setGain(GAIN_TWOTHIRDS);  // 2/3x gain +/- 6.144V  1 bit = 3mV      0.1875mV (default)
+// ads.setGain(GAIN_ONE);        // 1x gain   +/- 4.096V  1 bit = 2mV      0.125mV
+// ads.setGain(GAIN_TWO);        // 2x gain   +/- 2.048V  1 bit = 1mV      0.0625mV
+// ads.setGain(GAIN_FOUR);       // 4x gain   +/- 1.024V  1 bit = 0.5mV    0.03125mV
+// ads.setGain(GAIN_EIGHT);      // 8x gain   +/- 0.512V  1 bit = 0.25mV   0.015625mV
+// ads.setGain(GAIN_SIXTEEN);    // 16x gain  +/- 0.256V  1 bit = 0.125mV  0.0078125mV
 
-## 1.2 Programmation
-
-### 1.2.1 Les différentes bibliothèques à intégrer
-
-
-### 1.2.2 Calcul de la puissance
-
-
-### 1.2.3 Récupération du timestamp
-
-
-### 1.2.4 Transmission des données via MQTT
+//ads1.setDataRate(8); //min data rate for ADS1115
+//ads1.setDataRate(16); //data rate for ads1
+//ads1.setDataRate(32); //data rate for ads1
+//ads1.setDataRate(64); //data rate for ads1
+//ads1.setDataRate(128); //data rate for ads1
+//ads1.setDataRate(250); //data rate for ads1
+//ads1.setDataRate(475); //data rate for ads1
+//ads1.setDataRate(860); //max data rate for ADS1115
 
 
-### 1.2.5 Programme définitif tournant sur l'Arduino Uno équipé du shield W5100
-
-``` arduino
-// Ces deux bibliothèques sont indispensables pour le shield ethjernet W5100
+// Ces deux bibliothèques sont indispensables pour le shield
 #include <SPI.h>
 #include <Ethernet.h>
-// Pour gérer la connexion UDP indispensable pour récupérer le timestamp
+// Bibliothèque pour les connexions UDP (recupération timestamp)
 #include <EthernetUdp.h>
-// Pour gérer la connexion au broker MQTT
+// Bibliothèque pour les connexions MQTT
 #include <ArduinoMqttClient.h>
-// Pour la gestion du bus I2C
+// Bibliothèque pour gérer le bus I2C
 #include <Wire.h>
-// Pour la gestion des ADS1115
+// Bibliothèque pour gérer les ADS1115
 #include <Adafruit_ADS1X15.h>
 
 // L'adresse MAC du shield
@@ -57,22 +55,23 @@ EthernetClient client;
 MqttClient mqttClient(client);
 //DAC ADS1115
 Adafruit_ADS1115 ads1, ads2, ads3;
+TwoWire ads1_addr, ads2_addr, ads3_addr;
 // Le serveur à interroger
-//const char broker[] = "test.mosquitto.org";  //broker test modquitto address
+const char broker[] = "test.mosquitto.org";  //broker test modquitto address
 //IPAddress ip_broker(10,19,4,42);//adresse IP broker serveur sur réseau ESIEE
-IPAddress ip_broker(213,151,173,126);//adresse IP broker serveur sortie réseau ESIEE
-//int port = 1883;                             //broker default port
-int port = 25283;                             //broker port hors réseau ESIEE
-const char* username_client_broker = "admin";//username client broker sur serveur ESIEE
-const char* password_client_broker = "grp2pass";          //password client broker sur serveur ESIEE
+//IPAddress ip_broker(213,151,173,126);//adresse IP broker serveur sortie réseau ESIEE
+int port = 1883;                             //mqtt broker default port
+//int port = 25283;                             //mqtt broker port sur réseau ESIEE
+//const char* username_client_broker = "to_set";              //username client broker sur serveur ESIEE 
+//const char* password_client_broker = "to_set";          //password client broker sur serveur ESIEE 
 //donnees à envoyer
-const char topic_i1[] = "Projet_S8_Ieff1_mh1977";
-const char topic_i2[] = "Projet_S8_Ieff2_mh1977";
-const char topic_i3[] = "Projet_S8_Ieff3_mh1977";
-const char topic_p1[] = "Projet_S8_Puiss1_mh1977";
-const char topic_p2[] = "Projet_S8_Puiss2_mh1977";
-const char topic_p3[] = "Projet_S8_Puiss3_mh1977";
-const char topic_tmstmp[] = "Projet_S8_TmStmp_mh1977";
+//const char topic_i1[] = "Projet_S8_Ieff1";
+//const char topic_i2[] = "Projet_S8_Ieff2";
+//const char topic_i3[] = "Projet_S8_Ieff3";
+char topic_p1[] = "Projet_S8_Puiss1";
+char topic_p2[] = "Projet_S8_Puiss2";
+char topic_p3[] = "Projet_S8_Puiss3";
+char topic_tmstmp[] = "Projet_S8_TmStmp";
 //set interval for sending messages (milliseconds)
 const long interval = 1000;
 unsigned long previousMillis = 0;
@@ -82,7 +81,10 @@ unsigned long epoch = 0;
 
 const float FACTOR = 50;
 const float multiplier = 0.0625F;
-int time_counter = 0;
+unsigned long time_counter = 0;
+int Puissance_1;
+int Puissance_2;
+int Puissance_3;
 
 //prototypes des fonctions
 void PrintValue(String prefix, float value, String postfix);
@@ -92,57 +94,34 @@ void sendNTPpacket(const char* address);
 unsigned long GetUnixTimestamp();
 /*void SendMQTT_float_message(char top[], float val);
 void SendMQTT_uint_message(char top[], unsigned long val);*/
-void SendMQTT_message(char top[], float val);
+void SendMQTT_message(char top[], int val);
 void SendMQTT_message(char top[], unsigned long val);
 
-//char serveur[] = "perdu.com";
-
 void setup() {
-  bool flag_ads1_init;
-  bool flag_ads2_init;
-  bool flag_ads3_init;
   // On démarre la voie série pour déboguer
   Serial.begin(9600);
-  Wire.begin();
+
   while (!Serial) {
     ;  // wait for serial port to connect. Needed for native USB port only
   }
 
+  while (!ads1.begin()){
+    ;
+    };
   ads1.setGain(GAIN_TWO);  // +/- 2.048V  0.0625mV
+  ads1.setDataRate(475);
+  
+  while (!ads2.begin()){
+    ;
+    };
   ads2.setGain(GAIN_TWO);  // +/- 2.048V  0.0625mV
+  ads2.setDataRate(475);
+  
+  while (!ads3.begin()){
+    ;
+    };
   ads3.setGain(GAIN_TWO);  // +/- 2.048V  0.0625mV
-  ads1.setDataRate(860);
-  ads2.setDataRate(860);
-  ads3.setDataRate(860);
-  /*if (!ads1.begin(0x48) || !ads2.begin(0x49) || !ads3.begin(0x4B)) {
-    Serial.println("Failed to initialize one of the 3 ADS.");
-    while (1)
-      ;
-  }*/
-  while ( flag_ads1_init = !ads1.begin(0x48) ){
-    // do nothing or
-    Serial.println("Failed to initialize ADS1.");
-    if(flag_ads1_init == false){
-      Serial.println("Success to initialize ADS1.");
-    }
-    //while (1);
-  };
-  while ( flag_ads2_init = !ads2.begin(0x49) ){
-    // do nothing or
-    Serial.println("Failed to initialize ADS2.");
-    if(flag_ads2_init == false){
-      Serial.println("Success to initialize ADS2.");
-    }
-    //while (1);
-  };
-  while ( flag_ads3_init = !ads3.begin(0x4B) ){
-    // do nothing or
-    Serial.println("Failed to initialize ADS3.");
-    if(flag_ads3_init == false){
-      Serial.println("Success to initialize ADS3.");
-    }
-    //while (1);
-  };
+  ads3.setDataRate(475);
 
   char erreur = 0;
   // On démarre le shield Ethernet SANS adresse IP (donc donnée via DHCP)
@@ -174,106 +153,51 @@ void setup() {
   //connexion au MQTTbroker
   Serial.print("Attempting to connect to the MQTT broker: ");
   //Serial.println(broker);//broker test mosquitto
-  Serial.println(ip_broker);
-  //if (!mqttClient.connect(broker, port)) {//broker address au format char[]
-  mqttClient.setUsernamePassword(username_client_broker, password_client_broker);
-  if (!mqttClient.connect(ip_broker, port)) {
+  Serial.println(broker);
+  if (!mqttClient.connect(broker, port)) {//broker address au format char[]
+  //mqttClient.setUsernamePassword(username_client_broker, password_client_broker);
+  //if (!mqttClient.connect(ip_broker, port)) {
     Serial.print("MQTT connection failed! Error code = ");
     Serial.println(mqttClient.connectError());
     PrintConnectError(mqttClient.connectError());
     while (1)
       ;
-  }
-
-  Serial.println("You're connected to the MQTT broker!");
-  Serial.println();
-
-  /*if (erreur == 1) {
-    // Pas d'erreur ? on continue !
-    Serial.println("Connexion OK, envoi en cours...");
-
-    // On construit l'en-tête de la requête
-    client.println("GET / HTTP/1.1");
-    client.println("Host: perdu.com");
-    client.println("Connection: close");
-    client.println();
-    } else {
-    // La connexion a échoué :(
-    Serial.println("Echec de la connexion");
-    switch (erreur) {
-      case (-1):
-        Serial.println("Time out");
-        break;
-      case (-2):
-        Serial.println("Serveur invalide");
-        break;
-      case (-3):
-        Serial.println("Tronque");
-        break;
-      case (-4):
-        Serial.println("Reponse invalide");
-        break;
     }
-    while (1); // On bloque la suite
-    }*/
+
+    Serial.println("You're connected to the MQTT broker!");
+    Serial.println();
+
     epoch = GetUnixTimestamp();
     Serial.println(epoch);
 }
 
 void loop(void) {
-  //beginMillis = millis();
-  //Serial.println(epoch);
   //on met à jour le timestamp que toutes les minutes
   if (time_counter > 60) {
     epoch = GetUnixTimestamp();  //prend t>1s. pour recuperer le timestamp
-    time_counter = 1;
+    time_counter = 0;
   } else {
     epoch = epoch + (int)((endMillis - beginMillis)/1000);//durée d'une loop et mise à jour du timestamp
   }
   beginMillis = millis();
 
-  //Serial.println("Mesure entre 0_1");
   float I_eff_1 = get_I_Eff(1);                //prend t>1s. pour recuperer I_eff
-  //float Puissance_1 = 230.0 * I_eff_1 * 0.77;  //P = U_eff*I_eff*cos_phi (cos_phi = 0,77)
-  int Puissance_1 = 230 * I_eff_1;
-  //PrintValue("I_eff_1: ", I_eff_1, "A ,");
-  //PrintValue("Puissance_1: ", Puissance_1, "W");
+  Puissance_1 = (int)(230 * I_eff_1);
+  Serial.print("P1: ");
+  Serial.println(Puissance_1);
   float I_eff_2 = get_I_Eff(2);                //prend t>1s. pour recuperer I_eff
-  //float Puissance_2 = 230.0 * I_eff_2 * 0.77;  //P = U_eff*I_eff*cos_phi (cos_phi = 0,77)
-  int Puissance_2 = 230 * I_eff_2;
-  //PrintValue("I_eff_2: ", I_eff_2, "A ,");
-  //PrintValue("Puissance_2: ", Puissance_2, "W");
+  Puissance_2 = (int)(230 * I_eff_2);
+  Serial.print("P2: ");
+  Serial.println(Puissance_2);
   float I_eff_3 = get_I_Eff(3);                //prend t>1s. pour recuperer I_eff
-  //float Puissance_3 = 230.0 * I_eff_3 * 0.77;  //P = U_eff*I_eff*cos_phi (cos_phi = 0,77)
-  int Puissance_3 = 230 * I_eff_3;
+  Puissance_3 = (int)(230 * I_eff_3);
+  Serial.print("P3: ");
   Serial.println(Puissance_3);
-  //PrintValue("I_eff_3: ", I_eff_3, "A ,");
-  //PrintValue("Puissance_3: ", Puissance_3, "W");
 
   unsigned long currentMillis = millis();
   if (currentMillis - previousMillis >= interval) {  //n'envoie que si interval > 1s.
     // save the last time a message was sent
     previousMillis = currentMillis;
-
-    //record random value from A0, A1 and A2
-    /*int Rvalue = analogRead(A0);
-      int Rvalue2 = analogRead(A1);
-      int Rvalue3 = analogRead(A2);*/
-    //float value1 = I_eff_1;
-    //float value2 = Puissance_1;
-    unsigned long value3 = epoch;
-
-    /*Serial.print("Sending message to topic: ");
-    Serial.println(topic);
-    Serial.println(Rvalue);
-
-    Serial.print("Sending message to topic: ");
-    Serial.println(topic2);
-    Serial.println(Rvalue2);
-
-    Serial.print("Sending message to topic: ");
-    Serial.println(topic3);
-    Serial.println(Rvalue3);*/
 
     // send message, the Print interface can be used to set the message contents
     //SendMQTT_message(topic_i1, I_eff_1);
@@ -285,40 +209,12 @@ void loop(void) {
     
     SendMQTT_message(topic_tmstmp, epoch);
 
-    /*mqttClient.beginMessage(topic);
-    mqttClient.print(Rvalue);
-    mqttClient.endMessage();
-
-    mqttClient.beginMessage(topic2);
-    mqttClient.print(Rvalue2);
-    mqttClient.endMessage();
-
-    mqttClient.beginMessage(topic3);
-    mqttClient.print(Rvalue3);
-    mqttClient.endMessage();*/
-
-    //Serial.println();
   }
 
   // call poll() regularly to allow the library to send MQTT keep alive which
   // avoids being disconnected by the broker
   mqttClient.poll();
 
-  /*char carlu = 0;
-    // on lit les caractères s'il y en a de disponibles
-    if (client.available()) {
-    carlu = client.read();
-    Serial.print(carlu);
-    }
-
-    // Si on est bien déconnecté.
-    if (!client.connected()) {
-    Serial.println();
-    Serial.println("Deconnexion !");
-    // On ferme le client
-    client.stop();
-    while (1); // On ne fait plus rien
-    }*/
   endMillis = millis();
   time_counter++;
   Serial.println(epoch);
@@ -356,7 +252,7 @@ float get_I_Eff(int input) {//note: changer le nom de la variable input en num_A
   float i_eff;
   float sum = 0;
   int counter = 0;
-  long t = millis();
+  unsigned long t = millis();
   while (millis() - t < 1000)  //on effectue des mesures sur 1s.
   {
     if (input == 1) {
@@ -372,18 +268,11 @@ float get_I_Eff(int input) {//note: changer le nom de la variable input en num_A
       //Serial.print("Differential_0_1 sur ADS_3: "); Serial.println(results);
     }
     voltage = results * multiplier;
-    //PrintValue("Tension de mesure 0_1: ", voltage, " mV");
-    //PrintValue("Tension de mesure 0_3: ", voltage, " mV");
     current = voltage * FACTOR;
     current /= 1000.0;
-    //PrintValue("Intensité mesurée 0_1: ", current, " A");
-    //PrintValue("Intensité mesurée 0_3: ", current, " A");
     sum += sq(current);  //on somme i² pendant 1s.
     counter = counter + 1;
   }
-  //Serial.print("sum = "); Serial.println(sum, 3);
-  //Serial.print("counter = "); Serial.println(counter);
-
   i_eff = sqrt(sum / counter);
   return (i_eff);
 }
@@ -481,15 +370,3 @@ void SendMQTT_message(char top[], unsigned long val) {
   mqttClient.endMessage();
   //Serial.print("ok: "); Serial.println(val);
 }
-```
-
-## 1.3 Quelques images de l'objet connecté
-
-<img
-    style="display: block; 
-           margin-left: auto;
-           margin-right: auto;
-           width: 70%;"
-src="../images/capteur_courant_3_ads.jpg"
-alt = "capteur de courants avec ses 3 ADS1115">
-<p style="text-align: center;"><em>Le capteur de courants avec ses 3 ADS1115 et le shield ethernet monté sur la carte Arduino Uno</em></p>
