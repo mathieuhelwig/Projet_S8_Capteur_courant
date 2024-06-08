@@ -6,7 +6,7 @@ nav_order: 7
 
 ## Ressources de notre projet
 
-Bienvenue dans la section dédiée aux ressources de notre projet. Ici, vous trouverez une liste détaillée des différents sites et documents qui nous aider dans la lréalisation de ce projet.
+Bienvenue dans la section dédiée aux ressources de notre projet. Ici, vous trouverez une liste détaillée des différents sites et documents qui nous ont aidé dans la réalisation de ce projet.
 
 ## Sites web
 
