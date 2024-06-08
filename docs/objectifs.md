@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 nav_order: 2
 title: Objectifs du projet
 ---

@@ -10,7 +10,7 @@ has_children: true
 
 La conception de l'objet connecté est composée de :
 
-1. [La réalisation (montage / câblage)](realisation.md)
+1. [La réalisation (montage / câblage)](.\2_steps\realisation.md)
 2. [La programmation arduino](programmation.md)
 
 

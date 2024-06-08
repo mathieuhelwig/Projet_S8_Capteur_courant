@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 nav_order: 4
 title: Conception et prototypage
 has_children: true
@@ -13,7 +13,7 @@ Bienvenue dans la section dédiée aux étapes de conception et prototypage du p
 
 Le processus de prototypage est divisé en 3 étapes :
 
-1. [Conception du capteur connecté](conception_capteur_connected.md)
+1. [Conception du capteur connecté](realisation_programmation.md)
 2. [Déploiement de la VM](deploiement_VM.md)
 3. [Programmation des flux et du dashboard Node-Red](flux_dashboard_node-red.md)
 
