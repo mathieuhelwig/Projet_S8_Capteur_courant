@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: home
 title: Programmation des flux et du dashboard Node-Red
 parent: Conception et prototypage
 nav_order: 3
 ---
 
-# 3. Programmation des flux et du dashboard Node-Red
+## 3. Programmation des flux et du dashboard Node-Red
 
 ## 3.1 Récupération des flux MQTT
 

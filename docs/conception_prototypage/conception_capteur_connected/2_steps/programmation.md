@@ -1,8 +1,8 @@
 ---
-layout: default
-title: Programmation arduino de l'objet connecté
+layout: home
+title: Programmation arduino
 parent: Réalisation et programmation de l'objet connecté
-grand-parent: Conception et prototypage
+grand_parent: Conception et prototypage
 nav_order: 2
 ---
 

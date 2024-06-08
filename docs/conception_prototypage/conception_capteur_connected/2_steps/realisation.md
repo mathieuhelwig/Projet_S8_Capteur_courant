@@ -1,18 +1,18 @@
 ---
-layout: default
-title: Réalisation de l'objet connecté
+layout: home
+title: Réalisation (montage/câblage)
 parent: Réalisation et programmation de l'objet connecté
-grand-parent: Conception et prototypage
+grand_parent: Conception et prototypage
 nav_order: 1
 ---
 
-## 1.1 Réalisation
+# Réalisation
 
 <p>
     Dans cette première partie nous présentons les différents composants de notre objet connecté et la manière dont ils seront raccordés ensemble.<br>
 </p>
 
-### 1.1.1 Présentation du capteur de courant SC-013
+# 1. Présentation du capteur de courant SC-013
 
 <p>
     Le capteur de courant SC-013 est un capteur de courant non invasif, c'est-à-dire qu'il peut être installé sur le phase du circuit à mesurer sans avoir à intervenir sur celle-ci. Aucune intervention sur l'installation électrique n'est donc nécessaire.<br>
@@ -60,7 +60,7 @@ alt = "relation entre tension RMS et crete a crete">
     C'est pourquoi, dans le cas du SC-013-050 avec une tension de sortie de 1V RMS, la tension de crête sera de +/- 1.414V et la tension crête-à-crête sera de 2.828V. Nous verrons un peu plus loin que ces valeurs sont importantes dans l'écriture du programme pour l'Arduino Uno.
 </p>
 
-### 1.1.2 Présentation du convertisseur analogique-numérique ADS1115
+# 2. Présentation du convertisseur analogique-numérique ADS1115
 
 <p>
     Le convertisseur analogique-numérique ADS-1115 permet de convertir une mesure analogique (signal continu) en une mesure numérique. Il prend en charge le protocole de communication I2C, ce qui permet de raccorder jusqu'à 4 ADS-1115 sur la même ligne de communication I2C. C'est un convertisseur 16 bits, c'est-à-dire que le signal analogique mesuré sera converti en une valeur sur 2 octets. Il est équipé d'un comparateur programmable, c'est-à-dire qu'il peut convertir une difference de potentiel (une tension donc) entre 2 de ses entrées. Cela nous interesse particulièrement car nous pourrons ainsi convertir la tension (proportionnelle au courant mesuré) delivrée par le SC-013-050 en signal numérique.<br>
@@ -108,7 +108,7 @@ alt = "schema_raccordement_4_ADS1115_sur_microcontroleur_bus_I2C">
     Dans la documentation technique de l'ADS1115, il est pécisé dans la partie "Programming / I2C Address Selection" (partie 9.5.1.1 page 23) que les 3 adresses correspondant à la connexion des pins d'adresses sur GND, VDD et SCL doivent être utilisées en premier. C'est ce que nous respecterons pour notre objet connecté.
 </p>
 
-### 1.1.3 La carte programmable Arduino Uno et son shield W5100
+# 3. La carte programmable Arduino Uno et son shield W5100
 
 
-### 1.1.4 Schéma du montage
+# 4. Schéma du montage
