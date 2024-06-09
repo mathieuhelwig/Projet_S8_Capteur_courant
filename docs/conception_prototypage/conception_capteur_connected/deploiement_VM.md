@@ -20,7 +20,7 @@ nav_order: 2
 
 &emsp;- Fichier .yml de déploiement de la stack:
 
-```
+```docker
 ### Création d'un environnement persistant mongoDB-Orion-NodeRed-MariaDB-MQTT Mosquitto ###
 
 # 1. créer préalablement 4 dossiers ("mongo", "nodered", "mosquitto", "mariadb") dans le répertoire courant pour le stockage des données persistantes
@@ -96,6 +96,6 @@ networks:
            margin-left: auto;
            margin-right: auto;
            width: 100%;"
-src="../images/stack_portainer.jpg"
+src="../../images/stack_portainer.jpg"
 alt="stack Portainer">
 <p style="text-align: center;"><em>Le résultat de la stack avec les différentes images déployées dans Portainer</em></p>
