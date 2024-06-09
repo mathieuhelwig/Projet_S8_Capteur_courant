@@ -13,13 +13,11 @@ Nous présentons ici quelques explications nécessaires à la compréhension du 
 ### 1. Les différentes bibliothèques à intégrer
     
 - SPI.h et Ethernet.h :\
-Ces 2 biliothèques sont indispensables au fonctionnement du shield ethernet W5100.
-    
+Ces 2 biliothèques sont indispensables au fonctionnement du shield ethernet W5100.    
 SPI.h permet de communiquer avec des périphériques SPI, à partir d'un controleur Arduino.\
-[SPI.h sur le site Arduino](https://www.arduino.cc/reference/en/language/functions/communication/spi/)
-    
+[SPI.h sur le site Arduino](https://www.arduino.cc/reference/en/language/functions/communication/spi/)\
 Ethenet.h permet une connexion au réseau (local et Internet) en utilisant une carte Arduino Ethernet ou un shield. Grâce à cette librairie vous pouvez utiliser Arduino Ethernet (carte ou shield) pour vous connecter à internet. Cette librairie fournit à la fois les fonctionnalités client et serveur. Elle permet égalementy de se connecter à un réseau local, y compris en DHCP, et prend en charge la résolution DNS.\
-[Ethernet.h sur le site Arduino](https://www.arduino.cc/reference/en/libraries/ethernet/)
+[Ethernet.h sur le site Arduino](https://www.arduino.cc/reference/en/libraries/ethernet/)\
     
 - EthernetUdp.h :\
 Cette bibliothèque permet la communication UDP, utilisée ici pour la connexion à un serveur de temps.\
