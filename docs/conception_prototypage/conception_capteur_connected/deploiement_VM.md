@@ -20,7 +20,7 @@ nav_order: 2
 
 &emsp;- Fichier .yml de déploiement de la stack:
 
-```docker
+```yml
 ### Création d'un environnement persistant mongoDB-Orion-NodeRed-MariaDB-MQTT Mosquitto ###
 
 # 1. créer préalablement 4 dossiers ("mongo", "nodered", "mosquitto", "mariadb") dans le répertoire courant pour le stockage des données persistantes
