@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: Réalisation (montage/câblage)
 parent: Réalisation et programmation de l'objet connecté
 grand_parent: Conception et prototypage
