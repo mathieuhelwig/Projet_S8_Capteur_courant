@@ -31,7 +31,7 @@ Nous l'utilisons ici pour nous connecter au broker MQTT (dans notre cas directem
 - Wire.h :\
 Cette bibliothèque permet la gestion du bus I2C sur Arduino. Nous l'utilisons ici pour gérer la communication entre l'Arduino Uno et les 3 ADS1115. Il faut noter que pour démarrer un ADS1115, on appelle simplement la fonction ads1.begin(). Avec cette bibliothèque, il n'est pas utile de passer l'adresse de l'ADS1115 sur le bus. Il nous faudra donc démarrer 3 ADS1115, et régler leur gain (fonction setGain) et leur taux d'échantillonage (fonction setDataRate). Ces réglages seront fait dans la partie setup() de notre programme.\
 Les différentes valeurs possibles pour le gain et le taux d'échantillonage sont précisées en début de programme. La note au début de ce message est très importante: il ne faut pas dépasser les plages de tension indiquées acceptables en entrée sur l'ADS1115. Hors comme nous l'avons vu dans la partie 1.1, la valeur crête du signal émis par le capteur SC-013-050 est de 1.414V. Avec un gain de 2 (GAINTWO), on a une plage de mesure de +/- 2.048V dans laquelle est compris le signal de +/-1.414V émis par la capteur. Avec un gain de 4, nous aurions dépasser les valeurs acceptables de l'intervalle.\
-[Wire.h sur le site Arduino](https://www.arduino.cc/reference/en/language/functions/communication/wire/)\**
+[Wire.h sur le site Arduino](https://www.arduino.cc/reference/en/language/functions/communication/wire/)
     
 
 ### 2. Calcul de la puissance
