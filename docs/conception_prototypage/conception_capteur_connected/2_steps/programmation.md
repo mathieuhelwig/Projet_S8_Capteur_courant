@@ -12,23 +12,23 @@ Nous présentons ici quelques explications nécessaires à la compréhension du 
 
 ### 1. Les différentes bibliothèques à intégrer
     
-- SPI.h et Ethernet.h :\
+- <u>SPI.h et Ethernet.h :</u>\
 Ces 2 biliothèques sont indispensables au fonctionnement du shield ethernet W5100.    
 SPI.h permet de communiquer avec des périphériques SPI, à partir d'un controleur Arduino.\
 [SPI.h sur le site Arduino](https://www.arduino.cc/reference/en/language/functions/communication/spi/)\
 Ethenet.h permet une connexion au réseau (local et Internet) en utilisant une carte Arduino Ethernet ou un shield. Grâce à cette librairie vous pouvez utiliser Arduino Ethernet (carte ou shield) pour vous connecter à internet. Cette librairie fournit à la fois les fonctionnalités client et serveur. Elle permet égalementy de se connecter à un réseau local, y compris en DHCP, et prend en charge la résolution DNS.\
 [Ethernet.h sur le site Arduino](https://www.arduino.cc/reference/en/libraries/ethernet/)
     
-- EthernetUdp.h :\
+- <u>EthernetUdp.h :</u>\
 Cette bibliothèque permet la communication UDP, utilisée ici pour la connexion à un serveur de temps.\
 [EthernetUdp.h sur le site Arduino](https://www.arduino.cc/reference/en/libraries/ethernet/ethernetudp.begin/)
     
-- ArduinoMqttClient.h :\
+- <u>ArduinoMqttClient.h :</u>\
 Cette bibliothèque permet une communication via le protocole MQTT (Message Queuing Telemetry Transport).\
 Nous l'utilisons ici pour nous connecter au broker MQTT (dans notre cas directement hébergé sur notre serveur) et lui envoyer des messages (publish).\
 [ArduinoMqttClient.h sur le site Arduino](https://www.arduino.cc/reference/en/libraries/arduinomqttclient/)
     
-- Wire.h :\
+- <u>Wire.h :</u>\
 Cette bibliothèque permet la gestion du bus I2C sur Arduino. Nous l'utilisons ici pour gérer la communication entre l'Arduino Uno et les 3 ADS1115. Il faut noter que pour démarrer un ADS1115, on appelle simplement la fonction ads1.begin(). Avec cette bibliothèque, il n'est pas utile de passer l'adresse de l'ADS1115 sur le bus. Il nous faudra donc démarrer 3 ADS1115, et régler leur gain (fonction setGain) et leur taux d'échantillonage (fonction setDataRate). Ces réglages seront fait dans la partie setup() de notre programme.\
 Les différentes valeurs possibles pour le gain et le taux d'échantillonage sont précisées en début de programme. La note au début de ce message est très importante: il ne faut pas dépasser les plages de tension indiquées acceptables en entrée sur l'ADS1115. Hors comme nous l'avons vu dans la partie 1.1, la valeur crête du signal émis par le capteur SC-013-050 est de 1.414V. Avec un gain de 2 (GAINTWO), on a une plage de mesure de +/- 2.048V dans laquelle est compris le signal de +/-1.414V émis par la capteur. Avec un gain de 4, nous aurions dépasser les valeurs acceptables de l'intervalle.\
 [Wire.h sur le site Arduino](https://www.arduino.cc/reference/en/language/functions/communication/wire/)
