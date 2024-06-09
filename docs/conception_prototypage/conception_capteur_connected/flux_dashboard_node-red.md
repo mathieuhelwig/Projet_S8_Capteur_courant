@@ -22,6 +22,6 @@ nav_order: 3
            margin-left: auto;
            margin-right: auto;
            width: 30%;"
-src="../images/dashboard_node-red.jpg"
+src="../../images/dashboard_node-red.jpg"
 alt="dashboard node-red">
 <p style="text-align: center;"><em>Rendu des données dans le dashboard de Node-Red</em></p>
