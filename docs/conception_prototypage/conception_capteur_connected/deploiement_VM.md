@@ -1,6 +1,6 @@
 ---
-layout: home
-title: Montage d'une VM sur un serveur
+layout: default
+title: Déploiement de la VM
 parent: Conception et prototypage
 nav_order: 2
 ---

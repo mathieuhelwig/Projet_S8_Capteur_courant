@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: Programmation des flux et du dashboard Node-Red
 parent: Conception et prototypage
 nav_order: 3

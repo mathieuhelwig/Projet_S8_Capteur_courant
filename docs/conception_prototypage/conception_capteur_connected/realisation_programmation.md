@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: Réalisation et programmation de l'objet connecté
 parent: Conception et prototypage
 nav_order: 1
