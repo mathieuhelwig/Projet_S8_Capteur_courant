@@ -88,4 +88,6 @@ src="../../images/dashboard_node-red.jpg"
 alt="dashboard node-red">
 <p style="text-align: center;"><em>Rendu des données dans le dashboard de Node-Red</em></p>
 
+
 ![Schema de fonctionnement de Node Red et de la BDD](../../images/Schema_nodeRed_BDD.png)
+Parcours des données du capteur jusqu'au dashboard
