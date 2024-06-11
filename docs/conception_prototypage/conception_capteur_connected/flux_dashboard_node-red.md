@@ -39,6 +39,38 @@ Nous avons donc écrit un script en SQL pour faire une moyenne des données sur 
 Ce script vide également la table temporaire toutes les 10 minutes.
 Ensuite il a fallu créer un EVENT qui exécute le script toutes les minutes.
 
+Voici le script qui permet d'automatiser ces actions : 
+```
+-- Fonction permettant d'envoyer la moyenne des données sur une minute dans la table principale
+-- Effaçage des données de plus de 10 minutes dans la table temporaire
+CREATE PROCEDURE InsertAverage()
+BEGIN
+    DECLARE avg_puissance1 FLOAT;
+    DECLARE avg_puissance2 FLOAT;
+    DECLARE avg_puissance3 FLOAT;
+    DECLARE now_time DATETIME;
+
+    SET now_time = NOW();
+
+    SELECT AVG(puissance1), AVG(puissance2), AVG(puissance3)
+    INTO avg_puissance1, avg_puissance2, avg_puissance3
+    FROM puissance_temporaire
+    WHERE timestamp >= (now_time - INTERVAL 1 MINUTE);
+
+    INSERT INTO puissance (average_puissance1, average_puissance2, average_puissance3, timestamp)
+    VALUES (avg_puissance1, avg_puissance2, avg_puissance3, now_time);
+
+    -- Optionnel : Supprime les entrées de plus de 10 minutes
+    DELETE FROM puissance_temporaire
+    WHERE timestamp < (now_time - INTERVAL 10 MINUTE);
+END
+
+-- Créeation d'un evenement qui éxécute la fonction toutes les minutes
+CREATE EVENT IF NOT EXISTS CalculateAndStoreAverage
+ON SCHEDULE EVERY 1 MINUTE
+DO CALL InsertAverage();
+
+```
 ## 3.4 Dashboard
 Pour visualiser les données en temps réel, nous avons utilisé le tableau de bord de Node-Red. Le tableau de bord permet de créer des graphiques et des indicateurs visuels facilement. Les étapes pour configurer le tableau de bord sont :
 - Ajouter des nœuds ui dans Node-Red pour les différents éléments de visualisation (graphique linéaire, jauge, texte).
