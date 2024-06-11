@@ -90,4 +90,4 @@ alt="dashboard node-red">
 
 
 ![Schema de fonctionnement de Node Red et de la BDD](../../images/Schema_nodeRed_BDD.png)
-Parcours des données du capteur jusqu'au dashboard
+_Parcours des données du capteur jusqu'au dashboard_
