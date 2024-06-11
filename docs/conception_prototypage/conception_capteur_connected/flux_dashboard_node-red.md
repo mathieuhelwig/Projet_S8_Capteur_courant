@@ -21,7 +21,7 @@ Pour gérer les données avec Fiware Orion, nous avons d'abord enregistré les m
 
 Ensuite une fois que les entités sont créés, nous avons configurer des abonnements dans Orion. Un pour que chaque mise à jour des données de l'objet soit envoyée à des services spécifiques. Et d'autres contenant des conditions afin d'envoyer une notification chaque fois que cette condition est respectée. Lorsqu'un objet dépasse une certaine puissance par exemple une notification est envoyée. Cela permet d'indiquer par la suite que l'appareil dont la puissance est calulée est en fonctionnement.
 
-## 3.3 Enregistrement historisé dans MariaDB
+## 3.3 Enregistrement historisé dans MySQL
 Pour garder un historique des données, nous avons choisi d'utiliser une base de données MariaDB. Node-Red facilite cette intégration grâce à des nœuds spécifiques pour les bases de données. Voici comment nous avons procédé :
 - Ajouter un nœud mysql dans Node-Red.
 - Configurer ce nœud avec les paramètres de connexion à notre base de données MariaDB (hôte, utilisateur, mot de passe, base de données).
