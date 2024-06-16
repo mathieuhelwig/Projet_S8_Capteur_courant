@@ -21,13 +21,13 @@ Pour gérer les données avec Fiware Orion, nous avons d'abord enregistré les m
 
 Ensuite une fois que les entités sont créés, nous avons configurer des abonnements dans Orion. Un pour que chaque mise à jour des données de l'objet soit envoyée à des services spécifiques. Et d'autres contenant des conditions afin d'envoyer une notification chaque fois que cette condition est respectée. Lorsqu'un objet dépasse une certaine puissance par exemple une notification est envoyée. Cela permet d'indiquer par la suite que l'appareil dont la puissance est calulée est en fonctionnement.
 
-## 3.3 Enregistrement historisé dans MySQL
-Pour garder un historique des données, nous avons choisi d'utiliser une base de données MariaDB. Node-Red facilite cette intégration grâce à des nœuds spécifiques pour les bases de données. Voici comment nous avons procédé :
+## 3.3 Enregistrement historisé dans une BDD relationnelle
+Pour garder un historique des données, nous avons choisi d'utiliser une base de données relationnelle telle que MySQL ou MariaDB. Node-Red facilite cette intégration grâce à des nœuds spécifiques pour les bases de données. Voici comment nous avons procédé :
 - Ajouter un nœud mysql dans Node-Red.
 - Configurer ce nœud avec les paramètres de connexion à notre base de données MariaDB (hôte, utilisateur, mot de passe, base de données).
 - Relier les données reçues par MQTT à ce nœud mysql avec un nœud fonction pour formater les données en requêtes SQL (INSERT INTO).
 
-Pour avoir un affichage plus rapide nous avons décidé de ne pas afficher tous les points (un toutes les 3 secondes). Notre choix a été d'afficher une valeur par minute. Pour effectuer cela nous avons dû faire une moyenne des valeurs pour chaque minute. Nous avons donc créer une table qui contiendra une ligne par minute et une table temporaire, qui contient une ligne toutes les 3 secondes.
+Lors de nos tests, nous nous sommes aperçus que le temps d'affichage sur le dashboard était long. Cela est dû en partie au fait que Node-Red est monothreadé. C'est pourquoi, pour obtenir un affichage plus rapide, nous avons décidé de ne pas afficher tous les points (un toutes les 3 secondes). Notre choix a été d'afficher une valeur par minute. Pour effectuer cela nous avons dû faire une moyenne des valeurs pour chaque minute. Nous avons donc créer une table qui contiendra une ligne par minute et une table temporaire, qui contient une ligne toutes les 3 secondes.
 
 Pour rappel nous avons trois capteurs sur notre objet connecté. Voici un exemple de la composition d'une table (table puissance) :
 - timestamp
@@ -87,7 +87,3 @@ Pour visualiser les données en temps réel, nous avons utilisé le tableau de b
 src="../../images/dashboard_node-red.jpg"
 alt="dashboard node-red">
 <p style="text-align: center;"><em>Rendu des données dans le dashboard de Node-Red</em></p>
-
-
-![Schema de fonctionnement de Node Red et de la BDD](../../images/Schema_nodeRed_BDD.png)
-_Parcours des données du capteur jusqu'au dashboard_
