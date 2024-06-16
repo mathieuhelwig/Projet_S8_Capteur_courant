@@ -63,16 +63,16 @@ Afin de simplifier l'utilisation de Docker, nous avons dépoyé un agent permett
 
 ### Les différentes images à intégrer:
 
-&emsp;- Mosquitto MQTT Broker : relais entre la génération des informations (publish) et l'utilisation des informations (subscribe)
-&emsp;- Orion : élément central de la couche FiWare de notre projet, gestion de nos objets et de nos abonnements
-&emsp;- Mongo DB : permet le stockage des objets Orions et de leur état
-&emsp;- MySQL ou MariaDB: Stockage de l'historique de données et de la configuration de Keyrock
-&emsp;- Keyrock : permet d'établir la couche de sécurité d'Orion
-&emsp;- NodeRED : Traitement, exploitation, présentation des données
+&emsp;- Mosquitto MQTT Broker : relais entre la génération des informations (publish) et l'utilisation des informations (subscribe)\
+&emsp;- Orion : élément central de la couche FiWare de notre projet, gestion de nos objets et de nos abonnements\
+&emsp;- Mongo DB : permet le stockage des objets Orions et de leur état\
+&emsp;- MySQL ou MariaDB: Stockage de l'historique de données et de la configuration de Keyrock\
+&emsp;- Keyrock : permet d'établir la couche de sécurité d'Orion\
+&emsp;- NodeRED : Traitement, exploitation, présentation des données\
 
-L'idée est de déployer une stack, en important le fichier docker-compose (.yml) suivant afin de déployer tous les conteneurs nécessaires, mentionnés ci-dessus.
+L'idée est de déployer une stack, en important le fichier docker-compose (.yml) suivant afin de déployer tous les conteneurs nécessaires, mentionnés ci-dessus.\
 
-Nous avons 2 versions possibles pour ce fichier .yml, l'un proposant une BDDR MySQL, l'autre une BDDR MariaDB.
+Nous avons 2 versions possibles pour ce fichier .yml, l'un proposant une BDDR MySQL, l'autre une BDDR MariaDB.\
 
 #### Fichier .yml de déploiement de la stack avec une BDDR MariaDB (dans cette version Keyrock n'est pas intégré):
 
