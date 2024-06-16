@@ -19,7 +19,7 @@ Nous détaillons dans cette partie les choix techniques concernant les 3 étapes
 &emsp;&emsp;- monter dans une même stack:\
 &emsp;&emsp;&emsp;- une image Orion et MongoDB pour la gestion des objets Fiware,\
 &emsp;&emsp;&emsp;- une image Node-Red pour la gestion des flux et l'affichage des données sur un dashboard,\
-&emsp;&emsp;&emsp;- une image MariaDB pour le stockage en historique des objets Fiware,\
+&emsp;&emsp;&emsp;- une image MariaDB ou MySQL pour le stockage en historique des objets Fiware,\
 &emsp;&emsp;&emsp;- une image d'un serveur MQTT tel que Mosquitto pour la récupération des données transmises par l'objet connecté.
 ## 3. Développement des flux Node-Red permettant:
 &emsp;&emsp;- la récupération des données de l'objet connecté,\
