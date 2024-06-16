@@ -14,7 +14,7 @@ Bienvenue dans la documentation du projet "IoT electricity power counter". Ce si
 
 L'objectif de ce projet est la réalisation d'un capteur de courant connecté servant au calcul de la puissance consommée sur une ligne électrique.\
 Ce projet a été réalisé en 3 étapes:\
-&emsp;1. Réalisation et programmation de l'object connecté lui-même.\
+&emsp;1. Réalisation et programmation de l'object connecté.\
 &emsp;2. Montage d'une VM sur un serveur executant un conteneur, et déploiement des images nécessaires dans le conteneur.\
 &emsp;3. Développement des flux et des dashboards Node-Red.
 
