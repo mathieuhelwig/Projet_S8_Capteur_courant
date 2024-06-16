@@ -282,3 +282,16 @@ d. Re-déployer le conteneur.
 src="../../images/stack_portainer.jpg"
 alt="stack Portainer">
 <p style="text-align: center;"><em>Le résultat de la stack avec les différentes images déployées dans Portainer</em></p>
+
+
+## 2.4 Schéma de l'infrastructure serveur
+
+<img
+    style="display: block; 
+           margin-left: auto;
+           margin-right: auto;
+           width: 100%;"
+src="../../images/diagramme_infra.png"
+alt="stack Portainer">
+<p style="text-align: center;"><em>Schéma illustrant l'infrastructure serveur, avec les liaisons entre les différents services</em></p>
+
