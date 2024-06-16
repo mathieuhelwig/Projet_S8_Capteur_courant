@@ -5,7 +5,7 @@ parent: Conception et prototypage
 nav_order: 2
 ---
 
-# 2. Montage d'une VM sur un serveur
+## 2. Montage d'une VM sur un serveur
 
 Pour réaliser notre projet de compteur électrique connecté, nous avons déterminé qu'il était nécessaire d'utiliser plusieurs composants logiciels afin de mettre en place la partie relève des données.
 
