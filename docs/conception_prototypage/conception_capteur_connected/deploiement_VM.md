@@ -31,7 +31,8 @@ Toute plateforme de Cloud Computing en PaaS ou IaaS peut aussi être utilisé po
 
 Sur la machine, docker n'était pas installé par défaut, et nous l'avons donc installer avec ces commandes :
 
-```# Add Docker's official GPG key:
+```
+# Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
