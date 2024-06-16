@@ -247,7 +247,7 @@ volumes:
 
 ```
 
-#### Les différentes étapes du déploiement:
+### Les différentes étapes du déploiement:
 
 &emsp;- Manipulations antérieures au déploiement de la stack:\
 Créer préalablement 4 dossiers ("mongo", "nodered", "mosquitto", "mariadb" ou "MySQL") dans le répertoire courant pour le stockage des données persistantes
