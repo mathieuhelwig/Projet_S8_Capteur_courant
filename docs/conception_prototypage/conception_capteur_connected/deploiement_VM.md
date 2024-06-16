@@ -254,15 +254,15 @@ Créer préalablement 4 dossiers ("mongo", "nodered", "mosquitto", "mariadb" ou 
 
 &emsp;- Manipulations postérieures au déploiement de la stack:\
 &emsp;&emsp;- volumes à mapper pour la persistance des données:\
-Dans Portainer, après déploiement de la stack à l'aide du fichier .yml, mapper les volumes non persistants créés lors du déploiement de la stack vers les volumes créés à l'étape 1 pour chacune des images.
+Dans Portainer, après déploiement de la stack à l'aide du fichier .yml, mapper les volumes non persistants créés lors du déploiement de la stack vers les volumes créés à l'étape 1 pour chacune des images.\
 &emsp;&emsp;- réseau identique pour chacune des images:\
-S'assurer que les images sont sur un même réseau interne et ont des adresses IP internes (sur port 1026 pour Orion, sur port 1880 pour Node-Red, sur port 1883 pour Mosquitto, sur port 3306 pour MariaDB/MySQL)
-&emsp;&emsp;- configuration serveur Mosquitto:
-configurer Mosquitto (fichier config et passwd, voir https://itbacon.com/2023/08/01/installing-mosquitto-mqtt-in-portainer/)
-&emsp;&emsp;- configuration de Keyrock (authentification dans Orion):
-Accéder à l'interface Web en se connectant à l'adresse de la machine avec le port 3000 : 
-a. connecter avec les identifiants par défaut de Keyrock
-b. créer une nouvelle application, Keyrock donnera par la suite deux informations : un *clientID* et un *clientSecret*
+S'assurer que les images sont sur un même réseau interne et ont des adresses IP internes (sur port 1026 pour Orion, sur port 1880 pour Node-Red, sur port 1883 pour Mosquitto, sur port 3306 pour MariaDB/MySQL)\
+&emsp;&emsp;- configuration serveur Mosquitto:\
+configurer Mosquitto (fichier config et passwd, voir https://itbacon.com/2023/08/01/installing-mosquitto-mqtt-in-portainer/)\
+&emsp;&emsp;- configuration de Keyrock (authentification dans Orion):\
+Accéder à l'interface Web en se connectant à l'adresse de la machine avec le port 3000 :\
+a. connecter avec les identifiants par défaut de Keyrock\
+b. créer une nouvelle application, Keyrock donnera par la suite deux informations : un *clientID* et un *clientSecret*\
 c. sur l'interface de Portainer, modifier le conteneur pour ajouter les variables d'environnement suivantes :
 
 `IDM_SSL_ENABLED=false`
