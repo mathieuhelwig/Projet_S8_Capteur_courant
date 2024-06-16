@@ -20,9 +20,9 @@ Ce projet a été réalisé en 3 étapes:\
 
 ## Poster
 
-Ici vous publierez le poster de votre projet.
-
-![Poster projet](images/poster.jpg)
+![Schema de fonctionnement de Node Red et de la BDD](./images/Schema_nodeRed_BDD.png)
+<br>
+_Parcours des données du capteur jusqu'au dashboard_
 
 ## Vidéo
 
