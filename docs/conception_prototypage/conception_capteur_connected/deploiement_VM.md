@@ -260,8 +260,8 @@ S'assurer que les images sont sur un même réseau interne et ont des adresses I
 &emsp;&emsp;- configuration serveur Mosquitto:\
 configurer Mosquitto (fichier config et passwd, voir https://itbacon.com/2023/08/01/installing-mosquitto-mqtt-in-portainer/)\
 &emsp;&emsp;- configuration de Keyrock (authentification dans Orion):\
-Accéder à l'interface Web en se connectant à l'adresse de la machine avec le port 3000 :\
-a. connecter avec les identifiants par défaut de Keyrock\
+a. accéder à l'interface Web en se connectant à l'adresse de la machine avec le port 3000 :\
+a. se connecter avec les identifiants par défaut de Keyrock\
 b. créer une nouvelle application, Keyrock donnera par la suite deux informations : un *clientID* et un *clientSecret*\
 c. sur l'interface de Portainer, modifier le conteneur pour ajouter les variables d'environnement suivantes :
 
