@@ -109,7 +109,15 @@ alt = "schema_raccordement_4_ADS1115_sur_microcontroleur_bus_I2C">
     Dans la documentation technique de l'ADS1115, il est pécisé dans la partie "Programming / I2C Address Selection" (partie 9.5.1.1 page 23) que les 3 adresses correspondant à la connexion des pins d'adresses sur GND, VDD et SCL doivent être utilisées en premier. C'est ce que nous respecterons pour notre objet connecté.
 </p>
 
-### 3. La carte programmable Arduino Uno et son shield W5100
+### 3. Photo du montage
 
+<img
+    style="display: block;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;"
+src="./img/montage_complet.jpg"
+alt = "montage du capteur">
 
-### 4. Schéma du montage
+<p style="text-align: center;"><em>Montage réalisé (ici, 1 capteur SC-013-050 raccordé, un autre au premier plan)</em></p>
