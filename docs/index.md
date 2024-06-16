@@ -25,7 +25,7 @@ Ce projet a été réalisé en 3 étapes:\
            margin-left: auto;
            margin-right: auto;
            width: 30%;"
-src="./images/dashboard_node-red.jpg"
+src="./images/Schema_nodeRed_BDD.png"
 alt="Schema de fonctionnement de Node Red et de la BDD">
 <p style="text-align: center;"><em>Parcours des données du capteur jusqu'au dashboard</em></p>
 
